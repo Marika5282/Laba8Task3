@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <string>
 #include <fstream>
-#include "Input3.h"
+#include "InputHeader.h"
 #include "MyClassHeader.h"
 
 Talk::Talk() {
@@ -25,25 +25,12 @@ void Talk::print(int i) {
 		<< subscriber_number << "     ||\n";
 }
 void Talk::create() {
-	//std::string test_data = input_date();
 	date = input_date();
-
-	//std::string test_city_code = input_city_code();
 	city_code = input_city_code();
-
-	//std::string test_city_name = input_city_name();
 	city_name = input_city_name();
-
-	//std::string test_talk_time = input_talk_time();
 	talk_time = input_talk_time();
-
-	//std::string test_tariff = input_tariff();
 	tariff = input_tariff();
-
-	//std::string test_caller_number = input_number(0);
 	caller_number = input_number(0);
-
-	//std::string test_subscriber_number = input_number(1);
 	subscriber_number = input_number(1);
 }
 void Talk::clear() {
@@ -56,38 +43,39 @@ void Talk::clear() {
 	subscriber_number = "?";
 }
 void Talk::change(int field) {
+	enum { DATE = 1, CITY_CODE, CITY_NAME, TALK_TIME, TARIFF, CALLER_NUMBER, SUBSCRIBER_NUMBER };
 	switch (field) {
-	case 1: {
+	case DATE: {
 		std::string new_date = input_date();
 		date = new_date;
 		break;
 	}
-	case 2: {
+	case CITY_CODE: {
 		std::string new_city_code = input_city_code();
 		city_code = new_city_code;
 		break;
 	}
-	case 3: {
+	case CITY_NAME: {
 		std::string new_city_name = input_city_name();
 		city_name = new_city_name;
 		break;
 	}
-	case 4: {
+	case TALK_TIME: {
 		std::string new_talk_time = input_talk_time();
 		talk_time = new_talk_time;
 		break;
 	}
-	case 5: {
+	case TARIFF: {
 		std::string new_tariff = input_tariff();
 		tariff = new_tariff;
 		break;
 	}
-	case 6: {
+	case CALLER_NUMBER: {
 		std::string new_caller_number = input_number(0);
 		caller_number = new_caller_number;
 		break;
 	}
-	case 7: {
+	case SUBSCRIBER_NUMBER: {
 		std::string new_subscriber_number = input_number(1);
 		subscriber_number = new_subscriber_number;
 		break;
@@ -104,10 +92,7 @@ void Talk::push(int i) {
 	std::fstream file("file.bin", std::ios::binary | std::ios::in | std::ios::out);
 	if (!file.is_open())
 		throw 0;
-	std::cout << "before: " << file.tellp() << "\n";
 	file.seekp(i * sizeof(*this), std::ios::beg);
-	std::cout << "after: " << file.tellp() << "\n";
-
 	file.write((char*)this, sizeof(*this));
 	file.close();
 }

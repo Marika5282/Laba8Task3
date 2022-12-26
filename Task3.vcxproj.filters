@@ -27,12 +27,12 @@
     <ClCompile Include="Utility.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Validateinput.cpp">
+    <ClCompile Include="ValidateInput.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Input3.h">
+    <ClInclude Include="InputHeader.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="MyClassHeader.h">

@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
 #include <filesystem>
-#include "Input3.h"
+#include "InputHeader.h"
 #include "MyClassHeader.h"
 #include "UtilityHeader.h"
 
-const int AMOUNT = 10;
+const int AMOUNT = 200;
 namespace sf = std::filesystem;
 void push_all(MyPair Records, int begin) {
 	Talk* list = Records.first;

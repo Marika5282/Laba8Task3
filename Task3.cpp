@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Input3.h"
+#include "InputHeader.h"
 #include "MyClassHeader.h"
 #include "UtilityHeader.h"
 
@@ -52,5 +52,3 @@ int main() {
 
 	return 0;
 }
-
-

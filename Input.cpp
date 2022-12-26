@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Input3.h"
+#include "InputHeader.h"
 
 std::string input_date() {
     std::string str;
@@ -177,7 +177,7 @@ long long enter_positive_whole_number(long long limit, std::string message_1) {
 
     while (1) {
         std::cout << message_1;
-        std::cin >> N_str;
+        std::getline(std::cin, N_str);
         try {
             validate_ll(N_str);
         }
@@ -193,10 +193,10 @@ long long enter_positive_whole_number(long long limit, std::string message_1) {
     }
     N = stoll(N_str);
     while ((N < 1) || (N > limit)) {
-        std::cout << "You can input number only from 1 to " << limit << ". Please try again.\n";
+        std::cout << "You can enter number only from 1 to " << limit << ". Please try again.\n";
         while (1) {
             std::cout << message_1;
-            std::cin >> N_str;
+            std::getline(std::cin, N_str);
             try {
                 validate_ll(N_str);
             }
